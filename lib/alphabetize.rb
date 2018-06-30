@@ -1,6 +1,9 @@
 ESPERANTO_ALPHABET = "abcĉdefgĝhĥijĵklmnoprsŝtuŭvz"
 
 def alphabetize(arr)
-  arr.sort_by
+  arr.sort_by do |word|
+    word.chars.map do |letter|
+      ESPERANTO_ALPHABET.index(letter)
+    end
+  end
 end
-arr.sort_by { |a| a.split("").map{ |char| ESPERANTO_ALPHABET.index(char) } }
